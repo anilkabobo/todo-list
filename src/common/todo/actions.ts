@@ -22,11 +22,15 @@ export function getAllTasks() {
 export function addTask(description:String) {
   return (dispatch: Function) => {
     dispatch({
-      type: 'ADD_TODO',
+      type: 'ADD_TASK',
       payload: description
     })
     dispatch(actions.api.addToDo(description)).then(() => {
       dispatch(getAllTasks())
+    }).catch(() => {
+      dispatch({
+        type: 'ADD_TASK_FAILED'
+      })
     })
   };
 }

@@ -33,6 +33,8 @@ export function addToDo(description:String) {
   return async () => {
     return await request(options).then((res:any) => {
       return res;
+    }).catch((err: Error) => {
+      throw err;
     })
   }
 }
@@ -51,6 +53,8 @@ export function editToDo(id:String, description:String) {
   return async () => {
     return await request(options).then((res:any) => {
       return res;
+    }).catch((err: Error) => {
+      throw err;
     })
   }
 }
@@ -64,6 +68,8 @@ export function deleteToDo(id:String) {
   return async () => {
     return await request(options).then((res:any) => {
       return res;
+    }).catch((err: Error) => {
+      throw err;
     })
   }
 }
