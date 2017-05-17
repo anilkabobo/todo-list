@@ -21,6 +21,12 @@ const config: webpack.Configuration = {
             { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
         ]
     },
+    node: {
+      console: true,
+      fs: "empty",
+      tls: "empty",
+      net: "empty"
+    }
 };
 
 export default config;
